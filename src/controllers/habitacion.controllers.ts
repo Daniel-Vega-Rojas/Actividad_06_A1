@@ -5,7 +5,7 @@ export class HabitacionController {
 
     public index(req: Request, res: Response) {
         Habitacion.findAll({})
-            .then((users: Array<Habitacion>) => res.json(users))
+            .then((habitaciones: Array<Habitacion>) => res.json(habitaciones))
             .catch((err: Error) => res.status(500).json(err));
 
 

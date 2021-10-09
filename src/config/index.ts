@@ -25,6 +25,7 @@ export class App {
 
     private routes (){
         this.routePrv.userRoutes.routes(this.app)
+        this.routePrv.habitacionRoutes.routes(this.app)
     }
 
     private settings(){
