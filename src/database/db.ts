@@ -4,7 +4,7 @@ const DB_NAME = 'db_hoteles';
 
 const DB_USER = 'uchiha';
 
-const DB_PASS = 'lolo12345'
+const DB_PASS = 'Lolo12345.'
 
 export const database = new Sequelize(
 
