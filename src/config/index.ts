@@ -29,6 +29,9 @@ export class App {
         this.routePrv.personaRoutes.routes(this.app)
         this.routePrv.agenciaRoutes.routes(this.app)
         this.routePrv.categoriaRoutes.routes(this.app)
+        this.routePrv.hotelRoutes.routes(this.app)
+        this.routePrv.reservaRoutes.routes(this.app)
+        
     }
 
     private settings(){
