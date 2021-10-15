@@ -1,6 +1,7 @@
 import {Model, DataTypes } from 'sequelize';
 // const Sequelize = require('sequelize');
 import {database} from "../database/db";
+import { Hotel } from './hotel';
 
 export class Habitacion extends Model {
 
@@ -34,3 +35,6 @@ Habitacion.init (
 
     
 );
+
+Hotel.hasMany(Habitacion);
+Habitacion.belongsTo(Hotel);
