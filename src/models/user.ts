@@ -1,3 +1,4 @@
+
 import {Model, DataTypes } from 'sequelize';
 // const Sequelize = require('sequelize');
 import {database} from "../database/db";
