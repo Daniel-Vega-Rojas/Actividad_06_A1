@@ -7,7 +7,8 @@ export class UserRoutes {
     public usercontroller: UserController = new UserController();
 
     public routes(app: Application): void {
-        app.route('/users').get(this.usercontroller.index);
+        // app.route('/users').get(this.usercontroller.index);
+         app.route('/users').get(this.usercontroller.getUsers);
 
     }
 
