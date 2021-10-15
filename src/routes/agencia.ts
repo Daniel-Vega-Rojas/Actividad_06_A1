@@ -8,7 +8,9 @@ export class AgenciaRoutes {
     public agenciacontroller: AgenciaController = new AgenciaController();
 
     public routes(app: Application): void {
-        app.route('/agencias').get(this.agenciacontroller.index);
+        app.route('/agencias').get(this.agenciacontroller.getAgencias);
+        app.route('/agencias').get(this.agenciacontroller.createAgencia);
+        app.route('/agencias').get(this.agenciacontroller.borraragencia);
 
     }
 
