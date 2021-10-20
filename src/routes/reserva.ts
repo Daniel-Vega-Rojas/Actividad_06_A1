@@ -6,7 +6,9 @@ export class ReservaRoutes {
     public reservacontroller: ReservaController = new ReservaController();
 
     public routes(app: Application): void {
-        app.route('/reservas').get(this.reservacontroller.index);
+        app.route('/reservas').get(this.reservacontroller.getReserva);
+        app.route('/reservas').get(this.reservacontroller.createReserva);
+        app.route('/reservas').get(this.reservacontroller.borrarReserva);
 
     }
 

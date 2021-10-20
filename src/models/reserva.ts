@@ -1,19 +1,24 @@
 import {Model, DataTypes } from 'sequelize';
 // const Sequelize = require('sequelize');
 import {database} from "../database/db";
+import { Hotel } from './hotel';
+import { Persona } from './persona';
+import { Agencia } from './agencia';  
+
+
 
 export class Reserva extends Model {
 
     public Fecha_Ingreso!: string;
-    public Hora_Ingreso!: string;
+    public Hora_Ingreso!: Date;
     public Fecha_Salida!: string;
     
 }
 
 export interface ReservaI {
-    Fecha_Ingreso: string;
+    Fecha_Ingreso: Date;
     Hora_Ingreso: string;
-    Fecha_Salida: string;
+    Fecha_Salida: Date;
 }
 
 Reserva.init (
@@ -21,7 +26,7 @@ Reserva.init (
     {
 
         Fecha_Ingreso:  {
-            type: DataTypes.STRING, 
+            type: DataTypes.DATE, 
             allowNull: false
         },
 
@@ -31,7 +36,7 @@ Reserva.init (
         },
 
         Fecha_Salida: {
-            type: DataTypes.STRING, 
+            type: DataTypes.DATE, 
             allowNull: false
         },
 
@@ -46,7 +51,14 @@ Reserva.init (
         timestamps: true
     }
 
-
-
-    
 );
+
+
+Hotel.hasMany(Reserva);
+Reserva.belongsTo(Hotel);
+
+Persona.hasMany(Reserva);
+Reserva.belongsTo(Persona);
+
+Agencia.hasMany(Reserva);
+Reserva.belongsTo(Agencia);
