@@ -7,7 +7,9 @@ export class CategoriaRoutes {
     public categoriacontroller: CategoriaController = new CategoriaController();
 
     public routes(app: Application): void {
-        app.route('/categorias').get(this.categoriacontroller.index);
+        app.route('/categorias').get(this.categoriacontroller.getCategoria);
+        app.route('/categorias').get(this.categoriacontroller.createCategoria);
+        app.route('/categorias').get(this.categoriacontroller.borrarCategoria);
 
     }
 
