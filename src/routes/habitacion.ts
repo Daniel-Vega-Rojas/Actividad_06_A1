@@ -7,7 +7,8 @@ export class HabitacionRoutes {
 
     public routes(app: Application): void {
         app.route('/habitaciones').get(this.habitacioncontroller.getHabitaciones);
-        app.route('/habitaciones/borrar').delete(this.habitacioncontroller.borrarHabitacion);
+        app.route('/habitaciones').post(this.habitacioncontroller.createHabitacion);
+        app.route('/habitaciones').delete(this.habitacioncontroller.borrarHabitacion);
     }
 
 }

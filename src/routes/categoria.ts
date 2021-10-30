@@ -8,8 +8,8 @@ export class CategoriaRoutes {
 
     public routes(app: Application): void {
         app.route('/categorias').get(this.categoriacontroller.getCategoria);
-        app.route('/categorias').get(this.categoriacontroller.createCategoria);
-        app.route('/categorias').get(this.categoriacontroller.borrarCategoria);
+        app.route('/categorias').post(this.categoriacontroller.createCategoria);
+        app.route('/categorias').delete(this.categoriacontroller.borrarCategoria);
 
     }
 

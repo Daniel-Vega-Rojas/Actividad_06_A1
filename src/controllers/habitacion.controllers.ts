@@ -30,38 +30,44 @@ export class HabitacionController {
 
     public async createHabitacion(req: Request, res: Response){
 
-        const body: HabitacionI = req.body;
+        // const body: HabitacionI = req.body;
 
+        const {
+          id,
+          Tipo_De_Habitaciones
+
+        } = req.body
+        
         try {
-          if ((!body.Tipo_De_Habitaciones)) return res.status(400).json({msg: 'same ya kkk'});
+          let body: HabitacionI = {
+              Tipo_De_Habitaciones
 
+          }
           const habitacionExist: Habitacion | null = await Habitacion.findOne (
-              {
-                    where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
-              }
+            {
+                  where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
+            }
 
 
-          );  
-
-
-
+        );  
 
         if (habitacionExist){
-            return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
+          return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
         }
 
         const habitacion = await Habitacion.create(body);
         res.status(200).json({habitacion})
 
-        }catch (error) {
+      }catch (error) {
 
-            res.status(500).json({msg: 'Error Internal'})
+          res.status(500).json({msg: 'Error Internal'})
 
+      }
 
-        }
+      
 
     }
-
+      
     public async borrarHabitacion(req: Request,res: Response){
 
     

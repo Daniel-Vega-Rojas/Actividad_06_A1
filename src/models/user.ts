@@ -9,6 +9,7 @@ export class User extends Model {
     public apellido!: string;
     public correo!: string;
     public contraseña!: string;
+    public status! : boolean;
 }
 
 export interface UserI {
@@ -17,6 +18,7 @@ export interface UserI {
     apellido: string;
     correo: string;
     contraseña: string;
+    status: boolean;
 
  
 
@@ -43,6 +45,13 @@ User.init (
 
         contraseña:  {
             type: DataTypes.STRING, 
+            allowNull: false
+        },
+
+        status:  {
+            type: DataTypes.ENUM,
+            values:['Activado', 'Desactivado'], 
+            defaultValue: 'Activado',
             allowNull: false
         },
 

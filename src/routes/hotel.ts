@@ -7,8 +7,8 @@ export class HotelRoutes {
 
     public routes(app: Application): void {
         app.route('/hoteles').get(this.hotelcontroller.getHotel);
-        app.route('/hoteles').get(this.hotelcontroller.createHotel);
-        app.route('/hoteles').get(this.hotelcontroller.borrarHotel);
+        app.route('/hoteles').post(this.hotelcontroller.createHotel);
+        app.route('/hoteles').delete(this.hotelcontroller.borrarHotel);
 
 
     }
