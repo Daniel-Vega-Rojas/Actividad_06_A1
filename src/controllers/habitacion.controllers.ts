@@ -28,70 +28,149 @@ export class HabitacionController {
         }
     }
 
-    public async createHabitacion(req: Request, res: Response){
+    public async createHabitaciones(req: Request, res: Response){
 
-        // const body: HabitacionI = req.body;
+      // const body: UserI = req.body;
 
-        const {
-          id,
-          Tipo_De_Habitaciones
+      const {
+        id,
+        Tipo_De_Habitaciones,
+        status
 
-        } = req.body
-        
-        try {
-          let body: HabitacionI = {
-              Tipo_De_Habitaciones
+      } = req.body
+      
+      try {
+        let body: HabitacionI= {
+            Tipo_De_Habitaciones,
+            status
 
+          }   
+        const habitacionExist: Habitacion | null = await Habitacion.findOne (
+          {
+                where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
           }
-          const habitacionExist: Habitacion | null = await Habitacion.findOne (
-            {
-                  where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
-            }
 
 
-        );  
+      );  
 
-        if (habitacionExist){
-          return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
-        }
-
-        const habitacion = await Habitacion.create(body);
-        res.status(200).json({habitacion})
-
-      }catch (error) {
-
-          res.status(500).json({msg: 'Error Internal'})
-
+      if (habitacionExist){
+        return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
       }
 
-      
+      const habitacion = await Habitacion.create(body);
+      res.status(200).json({habitacion})
+
+    }catch (error) {
+
+        res.status(500).json({msg: 'Error Internal'})
 
     }
-      
-    public async borrarHabitacion(req: Request,res: Response){
-
     
+
+  }
+
+  public async updateHabitaciones(req: Request, res: Response) {
+
+    const { id: pk } = req.params;
+    const {
+      id,
+      Tipo_De_Habitaciones,
+      status
+
+    } = req.body
+
     try {
+      let body: HabitacionI= {
+        Tipo_De_Habitaciones,
+        status
 
-        const { id } = req.body;
-    
-        const response = await Habitacion.destroy({
-          where: { id: id }
-        })
-        .then( function(data){
-          const res = { success: true, data: data, message: "Eliminar  successful" }
-          return res;
-        })
-        .catch(error => {
-          const res = { success: false, error: error }
-          return res;
-        })
-        res.json(response);
-    
-      } catch (e) {
-        console.log(e);
-      }
+      }   
+
+      const habitacionExist:HabitacionI | null = await Habitacion.findByPk(pk)
+
+      if(!habitacionExist) return res.status(500).json({msg: 'La habitacion no existe'})
+
+      await Habitacion.update(
+        body,
+        {
+          where: {id:pk}
+        }
+      )
+
+      const user: HabitacionI | null = await Habitacion.findByPk(pk)
+      res.status(200).json({user})
+
+    }catch (error){
+
+      res.status(500).json({msg: 'Error Internal'})
+
+
     }
+    
+
+  }
+
+  public async deleteHabitaciones(req: Request, res: Response){
+
+    const {id: pk} = req.params;
+
+    try {
+      const habitacionExist:HabitacionI | null = await Habitacion.findByPk(pk)
+
+      if(!habitacionExist) return res.status(500).json({msg: 'La Habitacion  no existe'})
+
+     await Habitacion.update(
+        {
+          status: "Desactivado",
+
+        },
+
+        {
+          where: { id:pk}
+        }
+        
+      );
+      
+      res.status(200).json({msg: 'La Habitacion fue eliminada con exito :S'})
+    } catch (error) {
+      
+    }
+
+  }
+
+  public async destroyHabitaciones(req: Request, res: Response){
+
+    const {id: pk} = req.params;
+
+    try {
+      const habitacionExist:HabitacionI | null = await Habitacion.findByPk(pk)
+
+      if(!habitacionExist) return res.status(500).json({msg: 'La habitacion  no existe'})
+
+     await Habitacion.destroy(
+        // {
+        //   status: "Desactivado",
+
+        // },
+
+        {
+          where: { id:pk}
+        }
+        
+      );
+      
+      res.status(200).json({msg: 'La Habitacion fue destruida con exito'})
+    } catch (error) {
+      
+    }
+
+  }
+
+
+
+
+
+
     
 
 

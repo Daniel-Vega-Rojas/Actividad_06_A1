@@ -11,7 +11,7 @@ export class UserRoutes {
          app.route('/users').get(this.usercontroller.getUsers);
          app.route('/users').post(this.usercontroller.createUser);
          app.route('/users/:id').patch(this.usercontroller.updateUser);
-         app.route('/deleteusers/:id').patch(this.usercontroller.deleteUser);
+         app.route('/desactivarusers/:id').patch(this.usercontroller.deleteUser);
          app.route('/destroyusers/:id').delete(this.usercontroller.destroyUser);
 
     }
