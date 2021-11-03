@@ -9,9 +9,10 @@ export class AgenciaRoutes {
 
     public routes(app: Application): void {
         app.route('/agencias').get(this.agenciacontroller.getAgencias);
-        app.route('/agencias').get(this.agenciacontroller.createAgencia);
-        app.route('/agencias').get(this.agenciacontroller.borraragencia);
-
+        app.route('/agencias').post(this.agenciacontroller.createAgencias);
+        app.route('/agencias/:id').patch(this.agenciacontroller.updateAgencia);
+        app.route('/desactivaragencias/:id').patch(this.agenciacontroller.deleteAgencias);
+        app.route('/destroyagencias/:id').delete(this.agenciacontroller.destroyAgencia);
     }
 
 }

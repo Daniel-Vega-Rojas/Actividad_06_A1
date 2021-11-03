@@ -8,6 +8,7 @@ export class Persona extends Model {
     public apellido!:  string;
     public direccion!: string;
     public telefono!:  string;
+    public status! : boolean;
 }
 
 export interface PersonaI {
@@ -15,6 +16,7 @@ export interface PersonaI {
     apellido:  string;
     direccion:  string;
     telefono:   string;
+    status : boolean;
 }
 
 Persona.init (
@@ -35,6 +37,13 @@ Persona.init (
         },
         telefono:  {
             type: DataTypes.STRING, 
+            allowNull: false
+        },
+        
+        status:  {
+            type: DataTypes.ENUM,
+            values:['Activado', 'Desactivado'], 
+            defaultValue: 'Activado',
             allowNull: false
         },
 

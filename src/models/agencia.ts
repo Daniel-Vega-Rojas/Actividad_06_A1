@@ -8,6 +8,7 @@ export class Agencia extends Model {
     public direccion!: string;
     public telefono!:  string;
     public ciudad!:  string;
+    public status! : boolean;
 }
 
 export interface AgenciaI {
@@ -15,6 +16,7 @@ export interface AgenciaI {
     direccion: string;
     telefono:  string;
     ciudad:  string;
+    status : boolean;
 }
 
 Agencia.init (
@@ -35,6 +37,12 @@ Agencia.init (
         },
         ciudad:  {
             type: DataTypes.STRING, 
+            allowNull: false
+        },
+        status:  {
+            type: DataTypes.ENUM,
+            values:['Activado', 'Desactivado'], 
+            defaultValue: 'Activado',
             allowNull: false
         },
 
