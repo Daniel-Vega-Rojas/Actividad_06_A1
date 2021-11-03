@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { where } from "sequelize";
 import { Agencia, AgenciaI } from '../models/agencia';
 
 
@@ -29,67 +30,156 @@ export class AgenciaController {
         }
     }
 
-    public async createAgencia(req: Request, res: Response){
+    public async createAgencias(req: Request, res: Response){
 
-        const body: AgenciaI = req.body;
+      // const body: UserI = req.body;
 
-        try {
-          if ((!body.nombre && body.direccion && body.telefono && body.ciudad )) return res.status(400).json({msg: 'Agencia R'});
+      const {
+        id,
+        nombre,
+        direccion,
+        telefono,
+        ciudad,
+        status
 
-          const agenciaExist: Agencia | null = await Agencia.findOne (
-              {
-                    where: {nombre: body.nombre},
-              }
+      } = req.body
+      
+      try {
+        let body: AgenciaI= {
+            nombre,
+            direccion,
+            telefono,
+            ciudad,
+            status
 
-             
-          );  
-
-        
-
-
-        if (agenciaExist){
-            return res.status(400).json({msg: 'La Agencia ya ha sido registrada'})
-        }
-
-        const agencia = await Agencia.create(body);
-        res.status(200).json({agencia})
-
-        }catch (error) {
-
-            res.status(500).json({msg: 'Error Internal'})
+          }   
+        const agenciaExist: Agencia | null = await Agencia.findOne (
+          {
+                where: {nombre: body.nombre},
+          }
 
 
-        }
+      );  
 
-    }
-
-    public async borraragencia(req: Request,res: Response){
-
-    
-    try {
-
-        const { id } = req.body;
-    
-        const response = await Agencia.destroy({
-          where: { id: id }
-        })
-        .then( function(data){
-          const res = { success: true, data: data, message: "Eliminar  successful" }
-          return res;
-        })
-        .catch(error => {
-          const res = { success: false, error: error }
-          return res;
-        })
-        res.json(response);
-    
-      } catch (e) {
-        console.log(e);
+      if (agenciaExist){
+        return res.status(400).json({msg: 'La Agencia ya ha sido registrada, Vuelva a intentarlo'})
       }
+
+      const agencia = await Agencia.create(body);
+      res.status(200).json({agencia})
+
+    }catch (error) {
+
+        res.status(500).json({msg: 'Error Internal'})
+
     }
     
+
+  }
+
+  public async updateAgencia(req: Request, res: Response) {
+
+    const { id: pk } = req.params;
+    const {
+      id,
+      nombre,
+      direccion,
+      telefono,
+      ciudad,
+      status
+
+    } = req.body
+
+    try {
+      let body: AgenciaI= {
+        nombre,
+        direccion,
+        telefono,
+        ciudad,
+        status
+
+      }   
+
+      const agenciaExist:AgenciaI | null = await Agencia.findByPk(pk)
+
+      if(!agenciaExist) return res.status(500).json({msg: 'La Agencia no existe compa :c'})
+
+      await Agencia.update(
+        body,
+        {
+          where: {id:pk}
+        }
+      )
+
+      const user: AgenciaI | null = await Agencia.findByPk(pk)
+      res.status(200).json({user})
+
+    }catch (error){
+
+      res.status(500).json({msg: 'Error Internal'})
+
+
+    }
+    
+
+  }
+
+  public async deleteAgencias(req: Request, res: Response){
+
+    const {id: pk} = req.params;
+
+    try {
+      const agenciaExist:AgenciaI | null = await Agencia.findByPk(pk)
+
+      if(!agenciaExist) return res.status(500).json({msg: 'La Agencia ya no existe, compa'})
+
+     await Agencia.update(
+        {
+          status: "Desactivado",
+
+        },
+
+        {
+          where: { id:pk}
+        }
+        
+      );
+      
+      res.status(200).json({msg: 'La Agencia fue eliminada con exito, Vuelva Pronto'})
+    } catch (error) {
+      
+    }
+
+  }
+
+  public async destroyAgencia(req: Request, res: Response){
+
+    const {id: pk} = req.params;
+
+    try {
+      const agenciaExist:AgenciaI | null = await Agencia.findByPk(pk)
+
+      if(!agenciaExist) return res.status(500).json({msg: 'La Agencia ya  no existe :c'})
+
+     await Agencia.destroy(
+        // {
+        //   status: "Desactivado",
+
+        // },
+
+        {
+          where: { id:pk}
+        }
+        
+      );
+      
+      res.status(200).json({msg: 'La Agencia fue destruida con exito, Gracias Por Todo'})
+    } catch (error) {
+      
+    }
+  }
+
+
 
 
 }
-
-

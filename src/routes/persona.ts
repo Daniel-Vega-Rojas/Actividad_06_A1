@@ -8,10 +8,10 @@ export class PersonaRoutes {
 
     public routes(app: Application): void {
         app.route('/personas').get(this.personacontroller.getPersonas);
-        app.route('/personas').get(this.personacontroller.createPersona);
-        app.route('/personas').get(this.personacontroller.borrarpersona);
-        
-
+        app.route('/personas').post(this.personacontroller.createPersonas);
+        app.route('/personas/:id').patch(this.personacontroller.updatePersona);
+        app.route('/desactivarpersonas/:id').patch(this.personacontroller.deletePersonas);
+        app.route('/destroypersonas/:id').delete(this.personacontroller.destroyPersona);
     }
 
 }
