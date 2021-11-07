@@ -8,6 +8,7 @@ import { SaleRoutes } from './sale';
 // import { Hotel } from '../models/hotel';
 import { HotelRoutes } from './hotel';
 import { ReservaRoutes} from './reserva'
+import { ProductRoutes } from './product';
 export class Routes {
     public userRoutes: UserRoutes = new UserRoutes();
     public habitacionRoutes: HabitacionRoutes = new HabitacionRoutes();
@@ -17,4 +18,5 @@ export class Routes {
     public saleRoutes: SaleRoutes = new SaleRoutes();
     public hotelRoutes: HotelRoutes = new HotelRoutes();
     public reservaRoutes: ReservaRoutes =new ReservaRoutes();
+    public productRoutes: ProductRoutes = new ProductRoutes();
 }

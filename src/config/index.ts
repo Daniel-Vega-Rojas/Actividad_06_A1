@@ -31,6 +31,8 @@ export class App {
         this.routePrv.categoriaRoutes.routes(this.app)
         this.routePrv.hotelRoutes.routes(this.app)
         this.routePrv.reservaRoutes.routes(this.app)
+        this.routePrv.productRoutes.routes(this.app)
+       
         
     }
 
