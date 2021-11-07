@@ -7,9 +7,12 @@ export class CategoriaRoutes {
     public categoriacontroller: CategoriaController = new CategoriaController();
 
     public routes(app: Application): void {
-        app.route('/categorias').get(this.categoriacontroller.getCategoria);
-        app.route('/categorias').post(this.categoriacontroller.createCategoria);
-        app.route('/categorias').delete(this.categoriacontroller.borrarCategoria);
+        // app.route('/categorai').get(this.cataegoriacontroller.index);
+         app.route('/categorias').get(this.categoriacontroller.getCategorias);
+         app.route('/categorias').post(this.categoriacontroller.createCategorias);
+         app.route('/categorias/:id').patch(this.categoriacontroller.updateCategoria);
+         app.route('/desactivarcategorias/:id').patch(this.categoriacontroller.deleteCategoria);
+         app.route('/destroycategorias/:id').delete(this.categoriacontroller.destroyCategoria);
 
     }
 
