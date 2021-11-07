@@ -9,6 +9,7 @@ export class SaleRoutes {
     public routes(app: Application): void {
         // app.route('/users').get(this.usercontroller.index);
          app.route('/sales').get(this.salecontroller.getSales);
+         app.route('/sales').post(this.salecontroller.createSale);
 
     }
 

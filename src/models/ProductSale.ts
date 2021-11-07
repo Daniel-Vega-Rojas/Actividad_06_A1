@@ -6,15 +6,20 @@ import {database} from "../database/db";
 
 export class ProductSale extends Model {
 
-    public cantidad!: string;
-    public precio!:   string;
+
+    public cantidad!:   number;
+    public precio!:     number;
+    public total!:      number;
     
 }
 
 export interface ProductSaleI {
 
+    productId: number;
+    saleId:    number;
     cantidad:  number;
     precio:    number;
+    total:     number;
     
     
 
@@ -33,6 +38,11 @@ ProductSale.init (
 
 
         precio:  {
+            type: DataTypes.FLOAT, 
+            allowNull: false
+        },
+
+        total:  {
             type: DataTypes.FLOAT, 
             allowNull: false
         },

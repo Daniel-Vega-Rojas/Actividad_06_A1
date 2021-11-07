@@ -5,20 +5,23 @@ import { User} from './user';
 
 export class Sale extends Model {
 
+    public id!: number;
     public fecha!: Date;
-    public descuentos!: number;
+    public descuento!: number;
     public subtotal!: number;
     public iva!: number 
-    public total!: number;
+    public granTotal!: number;
 }
 
 export interface SaleI {
 
+    UserId: number;
     fecha : Date;
     descuento: number;
     subtotal: number;
     iva: number;
-    total: number;
+    granTotal: number;
+    
     
 
  
@@ -49,7 +52,7 @@ Sale.init (
             allowNull: false
         },
 
-        total:  {
+        granTotal:  {
             type: DataTypes.BIGINT, 
             allowNull: false
         },

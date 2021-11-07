@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
-import { Sale } from '../models/sale';
+import { RelationalOperator } from "typescript";
+import { Product } from "../models/product";
+import { ProductSale, ProductSaleI } from "../models/ProductSale";
+import { Sale, SaleI } from '../models/sale';
 
 export class SaleController {
 
@@ -28,7 +31,94 @@ export class SaleController {
         }
     }
 
-    public mostrarVentas(){
+    public async createSale(req: Request, res: Response){
+
+        const {
+            id,
+            fecha,
+            descuento,
+            subtotal,
+            iva,
+            granTotal,
+            UserId,
+            products
+            // ojito puede ser UserId o userId
+        }= req.body
+
+        try {
+ 
+            let body: SaleI = {
+
+                fecha,
+                descuento,
+                subtotal,
+                iva,
+                granTotal,
+                UserId
+
+            }
+
+            const sale: Sale  = await  Sale.create(body)
+
+            const salenew = sale.id;
+            let productSaleBody:  any [] = [];
+            
+ // jugar con product,produtcs, productsale, ProductSale en antes del tamaña length , donde va any va ProductSaleI
+
+            if(sale) {
+                for (let index = 0; index < products.length; index++) {
+                    const element = products[index];
+                    productSaleBody.push(
+                        {
+                            "ProductId": element.ProductId,
+                            "SaleId":    element.SaleId,
+                            "cantidad":  element.cantidad,
+                            "precio":    element.precio,
+                            "total":     element.total
+                        }
+                    )
+                    
+                }
+
+                let productsale = await ProductSale.bulkCreate(productSaleBody);
+
+                if(!productsale){
+
+                    await sale.destroy(
+                        // {
+                        //     where: {
+                        //         id: salenew
+                        //     }
+                        // }
+                    ); 
+
+
+                }
+
+                const salecompleted: Sale | null = await Sale.findOne(
+                    {
+                        where: {
+                            id: salenew
+                        },
+
+                        include: [
+                            {
+                                model: Product
+                               
+                            }
+                        ]
+                    }
+                );
+
+                res.status(200).json({salecompleted})
+
+
+
+            }
+            
+        } catch (error) {
+            
+        }
 
     }
 }
