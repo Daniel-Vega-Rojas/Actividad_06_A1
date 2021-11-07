@@ -6,10 +6,11 @@ export class ReservaRoutes {
     public reservacontroller: ReservaController = new ReservaController();
 
     public routes(app: Application): void {
-        app.route('/reservas').get(this.reservacontroller.getReserva);
-        app.route('/reservas').get(this.reservacontroller.createReserva);
-        app.route('/reservas').get(this.reservacontroller.borrarReserva);
-
+        app.route('/reservas').get(this.reservacontroller.getReservas);
+        app.route('/reservas').post(this.reservacontroller.createReservas);
+        app.route('/reservas/:id').patch(this.reservacontroller.updateReservas);
+        app.route('/desactivarreservas/:id').patch(this.reservacontroller.deleteReservas);
+        app.route('/destroyreservas/:id').delete(this.reservacontroller.destroyReserva);
     }
 
 }

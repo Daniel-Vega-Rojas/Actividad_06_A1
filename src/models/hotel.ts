@@ -8,12 +8,14 @@ export class Hotel extends Model {
     public Nombre_De_Hotel!: string;
     public Direccion!: string;
     public Año_De_Construccion!: string;
+    public status! : boolean;
 }
 
 export interface HotelI {
     Nombre_De_Hotel: string;
     Direccion: string;
     Año_De_Construccion: string;
+    status : boolean;
 }
 
 Hotel.init (
@@ -32,6 +34,12 @@ Hotel.init (
 
         Año_De_Construccion: {
             type: DataTypes.STRING, 
+            allowNull: false
+        },
+        status:  {
+            type: DataTypes.ENUM,
+            values:['Activado', 'Desactivado'], 
+            defaultValue: 'Activado',
             allowNull: false
         },
 
