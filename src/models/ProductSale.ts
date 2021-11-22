@@ -6,7 +6,7 @@ import {database} from "../database/db";
 
 export class ProductSale extends Model {
 
-
+    
     public cantidad!:   number;
     public precio!:     number;
     public total!:      number;
@@ -15,8 +15,8 @@ export class ProductSale extends Model {
 
 export interface ProductSaleI {
 
-    productId: number;
-    saleId:    number;
+    ProductId: number;
+    SaleId:    number;
     cantidad:  number;
     precio:    number;
     total:     number;

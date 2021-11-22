@@ -16,15 +16,15 @@ export class ProductController {
     public  async getProduct (req: Request, res: Response){
 
         try {
-            const Products = await Product.findAll(
-              {
-                where: { status: "Activado"}
-              }
+            const products = await Product.findAll(
+              // {
+              //   where: { status: "Activado"}
+              // }
             )
-            if(!Products) {
+            if(!products) {
                 res.status(400).json({msg: 'producto invalid'})
            }
-           return res.status(200).json({Products})
+           return res.status(200).json({products})
 
         } catch (error) {
 

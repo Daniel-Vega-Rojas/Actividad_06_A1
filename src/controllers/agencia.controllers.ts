@@ -6,29 +6,29 @@ import { Agencia, AgenciaI } from '../models/agencia';
 
 export class AgenciaController {
 
-    // public index(req: Request, res: Response) {
-    //     Agencia.findAll({})
-    //         .then((agencias: Array<Agencia>) => res.json(agencias))
-    //         .catch((err: Error) => res.status(500).json(err));
+    public getAgencias(req: Request, res: Response) {
+        Agencia.findAll({})
+            .then((agencias: Array<Agencia>) => res.json(agencias))
+            .catch((err: Error) => res.status(500).json(err));
 
 
 
-    // }
-    public  async getAgencias (req: Request, res: Response){
-
-        try {
-            const agencias = await Agencia.findAll()
-            if(!agencias) {
-                res.status(400).json({msg: 'Persona  invalid'})
-           }
-           return res.status(200).json({agencias})
-
-        } catch (error) {
-
-            res.status(500).json({msg: 'Error Internal'})
-
-        }
     }
+    // public  async getAgencias (req: Request, res: Response){
+
+    //     try {
+    //         const agencias = await Agencia.findAll()
+    //         if(!agencias) {
+    //             res.status(400).json({msg: 'Persona  invalid'})
+    //        }
+    //        return res.status(200).json({agencias})
+
+    //     } catch (error) {
+
+    //         res.status(500).json({msg: 'Error Internal'})
+
+    //     }
+    // }
 
     public async createAgencias(req: Request, res: Response){
 

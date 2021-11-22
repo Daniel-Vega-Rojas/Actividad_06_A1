@@ -3,30 +3,30 @@ import { Hotel, HotelI } from '../models/hotel';
 
 export class HotelController {
 
-    // public index(req: Request, res: Response) {
-    //     Hotel.findAll({})
-    //         .then((hoteles: Array<Hotel>) => res.json(hoteles))
-    //         .catch((err: Error) => res.status(500).json(err));
+    public getHoteles(req: Request, res: Response) {
+        Hotel.findAll({})
+            .then((hoteles: Array<Hotel>) => res.json(hoteles))
+            .catch((err: Error) => res.status(500).json(err));
 
 
 
-    // }
+    }
 
-    public  async getHoteles (req: Request, res: Response){
+  //   public  async getHoteles (req: Request, res: Response){
 
-      try {
-          const hoteles = await Hotel.findAll()
-          if(!hoteles) {
-              res.status(400).json({msg: 'Persona  invalid'})
-         }
-         return res.status(200).json({hoteles})
+  //     try {
+  //         const hoteles = await Hotel.findAll()
+  //         if(!hoteles) {
+  //             res.status(400).json({msg: 'Persona  invalid'})
+  //        }
+  //        return res.status(200).json({hoteles})
 
-      } catch (error) {
+  //     } catch (error) {
 
-          res.status(500).json({msg: 'Error Internal'})
+  //         res.status(500).json({msg: 'Error Internal'})
 
-      }
-  }
+  //     }
+  // }
 
   public async createHoteles(req: Request, res: Response){
 

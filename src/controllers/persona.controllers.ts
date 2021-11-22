@@ -5,30 +5,30 @@ import { Persona, PersonaI } from '../models/persona';
 
 export class PersonaController {
 
-    // public index(req: Request, res: Response) {
-    //     Persona.findAll({})
-    //         .then((personas: Array<Persona>) => res.json(personas))
-    //         .catch((err: Error) => res.status(500).json(err));
+    public getPersonas(req: Request, res: Response) {
+        Persona.findAll({})
+            .then((personas: Array<Persona>) => res.json(personas))
+            .catch((err: Error) => res.status(500).json(err));
 
 
 
-    // }
-    
-    public  async getPersonas (req: Request, res: Response){
-
-        try {
-            const personas = await Persona.findAll()
-            if(!personas) {
-                res.status(400).json({msg: 'Persona  invalid'})
-           }
-           return res.status(200).json({personas})
-
-        } catch (error) {
-
-            res.status(500).json({msg: 'Error Internal'})
-
-        }
     }
+    
+    // public  async getPersonas (req: Request, res: Response){
+
+    //     try {
+    //         const personas = await Persona.findAll()
+    //         if(!personas) {
+    //             res.status(400).json({msg: 'Persona  invalid'})
+    //        }
+    //        return res.status(200).json({personas})
+
+    //     } catch (error) {
+
+    //         res.status(500).json({msg: 'Error Internal'})
+
+    //     }
+    // }
 
     public async createPersonas(req: Request, res: Response){
 

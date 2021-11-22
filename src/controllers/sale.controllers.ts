@@ -61,7 +61,7 @@ export class SaleController {
             const sale: Sale  = await  Sale.create(body)
 
             const salenew = sale.id;
-            let productSaleBody:  any [] = [];
+            let productSaleBody:  ProductSaleI [] = [];
             
  // jugar con product,produtcs, productsale, ProductSale en antes del tamaña length , donde va any va ProductSaleI
 

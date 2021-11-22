@@ -4,29 +4,29 @@ import { Categoria, CategoriaI } from '../models/categoria';
 
 export class CategoriaController {
 
-    // public index(req: Request, res: Response) {
-    //     User.findAll({})
-    //         .then((users: Array<User>) => res.json(users))
-    //         .catch((err: Error) => res.status(500).json(err));
+    public getCategorias(req: Request, res: Response) {
+        Categoria.findAll({})
+            .then((users: Array<Categoria>) => res.json(users))
+            .catch((err: Error) => res.status(500).json(err));
 
 
 
-    // }
-    public  async getCategorias (req: Request, res: Response){
+    }
+  //   public  async getCategorias (req: Request, res: Response){
 
-      try {
-          const categorias = await Categoria.findAll()
-          if(!categorias) {
-              res.status(400).json({msg: 'Persona  invalid'})
-         }
-         return res.status(200).json({categorias})
+  //     try {
+  //         const categorias = await Categoria.findAll()
+  //         if(!categorias) {
+  //             res.status(400).json({msg: 'Persona  invalid'})
+  //        }
+  //        return res.status(200).json({categorias})
 
-      } catch (error) {
+  //     } catch (error) {
 
-          res.status(500).json({msg: 'Error Internal'})
+  //         res.status(500).json({msg: 'Error Internal'})
 
-      }
-  }
+  //     }
+  // }
 
     
     public async createCategorias(req: Request, res: Response){

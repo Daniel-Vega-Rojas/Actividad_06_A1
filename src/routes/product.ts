@@ -8,11 +8,11 @@ export class ProductRoutes {
 
     public routes(app: Application): void {
         // app.route('/users').get(this.usercontroller.index);
-         app.route('/product').get(this.productcontroller.getProduct);
-         app.route('/product').post(this.productcontroller.createProduct);
-         app.route('/product/:id').patch(this.productcontroller.updateProduct);
-         app.route('/desactivarproducts/:id').patch(this.productcontroller.deleteProduct);
-         app.route('/destroyproducts/:id').delete(this.productcontroller.destroyProduct);
+         app.route('/productos').get(this.productcontroller.getProduct);
+         app.route('/productos').post(this.productcontroller.createProduct);
+         app.route('/productos/:id').patch(this.productcontroller.updateProduct);
+         app.route('/desactivarproductos/:id').patch(this.productcontroller.deleteProduct);
+         app.route('/destroyproductos/:id').delete(this.productcontroller.destroyProduct);
 
     }
 
