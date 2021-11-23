@@ -17,12 +17,13 @@ import { CreateHotelComponent } from './components/hotel/create-hotel/create-hot
 import { ShowReservaComponent } from './components/reserva/show-reserva/show-reserva.component';
 import { CreateReservaComponent } from './components/reserva/create-reserva/create-reserva.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { HttpClient} from '@angular/common/http';
 import { HabitacionService } from './services/habitacion.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { CategoriaService } from './services/categoria.service';
+import { AgenciaService } from './services/agencia.service';
+import { PersonaService } from './services/persona.service';
 
 @NgModule({
   declarations: [
@@ -45,14 +46,15 @@ import { CategoriaService } from './services/categoria.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // HttpClient,
     FormsModule,
     MatTableModule,
     BrowserAnimationsModule
   ],
   providers: [
     HabitacionService,
-    CategoriaService
+    CategoriaService,
+    AgenciaService,
+    PersonaService
   ],
   bootstrap: [AppComponent]
 })

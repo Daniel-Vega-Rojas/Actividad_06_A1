@@ -4,6 +4,8 @@ import { CreateHabitacionComponent } from './components/habitacion/create-habita
 import { ShowHabitacionComponent } from './components/habitacion/show-habitacion/show-habitacion.component';
 import { ShowCategoriaComponent } from './components/categoria/show-categoria/show-categoria.component';
 import { CreateCategoriaComponent } from './components/categoria/create-categoria/create-categoria.component';
+import { ShowAgenciaComponent } from './components/agencia/show-agencia/show-agencia.component';
+import { CreateAgenciaComponent } from './components/agencia/create-agencia/create-agencia.component';
 
 const routes: Routes = [
 
@@ -25,6 +27,16 @@ const routes: Routes = [
     {
     path: "crearcategorias",
     component: CreateCategoriaComponent
+    },
+
+    {
+      path: "agencias",
+      component: ShowAgenciaComponent
+    },
+    
+    {
+      path: "crearagencias",
+      component: CreateAgenciaComponent
     },
 
 ];
