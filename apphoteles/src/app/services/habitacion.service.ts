@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 
 import {HabitacionI} from '../models/HabitacionI'
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +28,11 @@ export class HabitacionService {
 
     return this.http.get<HabitacionI[]>(this.base_path)
      
+  }
+
+  createHabitacion(data: HabitacionI): Observable<HabitacionI>{
+
+    return this.http.post<HabitacionI>(this.base_path, data)
   }
 }
 

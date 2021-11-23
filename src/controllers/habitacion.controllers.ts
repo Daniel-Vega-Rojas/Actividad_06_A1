@@ -28,45 +28,57 @@ export class HabitacionController {
     //     }
     // }
 
-    public async createHabitaciones(req: Request, res: Response){
+  //   public async createHabitaciones(req: Request, res: Response){
 
-      // const body: UserI = req.body;
+  //     // const body: UserI = req.body;
 
-      const {
-        id,
-        Tipo_De_Habitaciones,
-        status
+  //     const {
+  //       id,
+  //       Tipo_De_Habitaciones,
+  //       status
 
-      } = req.body
+  //     } = req.body
       
-      try {
-        let body: HabitacionI= {
-            Tipo_De_Habitaciones,
-            status
+  //     try {
+  //       let body: HabitacionI= {
+  //           Tipo_De_Habitaciones,
+  //           status
 
-          }   
-        const habitacionExist: Habitacion | null = await Habitacion.findOne (
-          {
-                where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
-          }
+  //         }   
+  //       const habitacionExist: Habitacion | null = await Habitacion.findOne (
+  //         {
+  //               where: {Tipo_De_Habitaciones: body.Tipo_De_Habitaciones},
+  //         }
 
 
-      );  
+  //     );  
 
-      if (habitacionExist){
-        return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
-      }
+  //     if (habitacionExist){
+  //       return res.status(400).json({msg: 'La habitacion ya ha sido registrada'})
+  //     }
 
-      const habitacion = await Habitacion.create(body);
-      res.status(200).json({habitacion})
+  //     const habitacion = await Habitacion.create(body);
+  //     res.status(200).json({habitacion})
 
-    }catch (error) {
+  //   }catch (error) {
 
-        res.status(500).json({msg: 'Error Internal'})
+  //       res.status(500).json({msg: 'Error Internal'})
 
-    }
+  //   }
     
 
+  // }
+
+  public async createHabitaciones(req: Request, res: Response){
+
+    let habitacion: HabitacionI = req.body;
+    try {
+
+      const dataHabitacion: HabitacionI = await Habitacion.create(habitacion);
+      res.json(dataHabitacion)
+    } catch (error) {
+        res.status(500).json(error)
+    }
   }
 
   public async updateHabitaciones(req: Request, res: Response) {

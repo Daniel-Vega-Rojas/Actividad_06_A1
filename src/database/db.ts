@@ -21,5 +21,11 @@ export const database = new Sequelize(
 
 database.sync( { force: true } )
     .then(function () {
-        console.log ('base de datos creada')
+        console.log ('                         O┬  ╔╗ ╔═╗╔═╗╔═╗  ╔╦╗╔═╗  ╔╦╗╔═╗╔╦╗╔═╗╔═╗  ╔═╗╦═╗╔═╗╔═╗╔╦╗╔═╗  O┬ ' )
+        console.log ('                         ┌┘  ╠╩╗╠═╣╚═╗║╣    ║║║╣    ║║╠═╣ ║ ║ ║╚═╗  ║  ╠╦╝║╣ ╠═╣ ║║╠═╣  ┌┘ ' )
+        console.log ('                         ┴O  ╚═╝╩ ╩╚═╝╚═╝  ═╩╝╚═╝  ═╩╝╩ ╩ ╩ ╚═╝╚═╝  ╚═╝╩╚═╚═╝╩ ╩═╩╝╩ ╩  ┴O ' )
+        console.log ('                                O┬   ╔═╗╔═╗╦═╗╦═╗╔═╗╔═╗╔╦╗╔═╗╔╦╗╔═╗╔╗╔╔╦╗╔═╗   O┬         ' )
+        console.log ('                                ┌┘   ║  ║ ║╠╦╝╠╦╝║╣ ║   ║ ╠═╣║║║║╣ ║║║ ║ ║╣    ┌┘           ' )
+        console.log ('                                ┴O   ╚═╝╚═╝╩╚═╩╚═╚═╝╚═╝ ╩ ╩ ╩╩ ╩╚═╝╝╚╝ ╩ ╚═╝   ┴O          ' )
+      
     })

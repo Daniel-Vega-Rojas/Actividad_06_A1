@@ -23,34 +23,34 @@ const routes: Routes = [
   },
 
   {
-    path: "categorias",
-    component: ShowCategoriaComponent
-    },
+  path: "categorias",
+  component: ShowCategoriaComponent
+  },
   
-    {
-    path: "crearcategorias",
-    component: CreateCategoriaComponent
-    },
+  {
+  path: "crearcategorias",
+  component: CreateCategoriaComponent
+  },
 
-    {
-      path: "agencias",
-      component: ShowAgenciaComponent
-     },
+  {
+  path: "agencias",
+  component: ShowAgenciaComponent
+  },
     
-      {
-      path: "crearagencias",
-      component: CreateAgenciaComponent
-      },
+  {
+  path: "crearagencias",
+  component: CreateAgenciaComponent
+  },
 
-    {
-      path: "personas",
-      component: ShowPersonaComponent
-      },
+  {
+  path: "personas",
+  component: ShowPersonaComponent
+  },
     
-      {
-      path: "crearpersonas",
-      component: CreatePersonaComponent
-      },
+  {
+  path: "crearpersonas",
+  component: CreatePersonaComponent
+  },
 
 ];
 

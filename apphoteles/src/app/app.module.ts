@@ -19,11 +19,20 @@ import { CreateReservaComponent } from './components/reserva/create-reserva/crea
 import { HttpClientModule } from '@angular/common/http';
 import { HabitacionService } from './services/habitacion.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { _SnackBarContainer } from '@angular/material/snack-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { CategoriaService } from './services/categoria.service';
 import { AgenciaService } from './services/agencia.service';
 import { PersonaService } from './services/persona.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,6 +57,12 @@ import { PersonaService } from './services/persona.service';
     HttpClientModule,
     FormsModule,
     MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
     BrowserAnimationsModule
   ],
   providers: [

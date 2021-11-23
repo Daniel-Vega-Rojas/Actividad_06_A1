@@ -1,4 +1,17 @@
-<table mat-table [dataSource]="habitacion" class="mat-elevation-z8">
+<div class="container">
+    
+    <div>
+       <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon">
+          <a routerLink="/crearhabitaciones">
+           <mat-icon>local_hospital</mat-icon>
+          </a>
+       </button>
+
+    </div>
+
+    <div> 
+
+   <table mat-table [dataSource]="habitacion" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -30,5 +43,9 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
+    
+ </div>
+
+</div>    
 
 
