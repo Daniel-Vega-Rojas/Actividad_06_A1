@@ -30,51 +30,63 @@ export class AgenciaController {
     //     }
     // }
 
-    public async createAgencias(req: Request, res: Response){
+    // public async createAgencias(req: Request, res: Response){
 
-      // const body: UserI = req.body;
+    //   // const body: UserI = req.body;
 
-      const {
-        id,
-        nombre,
-        direccion,
-        telefono,
-        ciudad,
-        status
+    //   const {
+    //     id,
+    //     nombre,
+    //     direccion,
+    //     telefono,
+    //     ciudad,
+    //     status
 
-      } = req.body
+    //   } = req.body
       
-      try {
-        let body: AgenciaI= {
-            nombre,
-            direccion,
-            telefono,
-            ciudad,
-            status
+    //   try {
+    //     let body: AgenciaI= {
+    //         nombre,
+    //         direccion,
+    //         telefono,
+    //         ciudad,
+    //         status
 
-          }   
-        const agenciaExist: Agencia | null = await Agencia.findOne (
-          {
-                where: {nombre: body.nombre},
-          }
+    //       }   
+    //     const agenciaExist: Agencia | null = await Agencia.findOne (
+    //       {
+    //             where: {nombre: body.nombre},
+    //       }
 
 
-      );  
+    //   );  
 
-      if (agenciaExist){
-        return res.status(400).json({msg: 'La Agencia ya ha sido registrada, Vuelva a intentarlo'})
-      }
+  //     if (agenciaExist){
+  //       return res.status(400).json({msg: 'La Agencia ya ha sido registrada, Vuelva a intentarlo'})
+  //     }
 
-      const agencia = await Agencia.create(body);
-      res.status(200).json({agencia})
+  //     const agencia = await Agencia.create(body);
+  //     res.status(200).json({agencia})
 
-    }catch (error) {
+  //   }catch (error) {
 
-        res.status(500).json({msg: 'Error Internal'})
+  //       res.status(500).json({msg: 'Error Internal'})
 
-    }
+  //   }
     
 
+  // }
+
+  public async createHabitaciones(req: Request, res: Response){
+
+    let agencia: AgenciaI = req.body;
+    try {
+
+      const dataAgencia: AgenciaI = await Agencia.create(agencia);
+      res.json(dataAgencia)
+    } catch (error) {
+        res.status(500).json(error)
+    }
   }
 
   public async updateAgencia(req: Request, res: Response) {
