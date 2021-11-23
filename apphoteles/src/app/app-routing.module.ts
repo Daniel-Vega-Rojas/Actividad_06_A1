@@ -6,6 +6,9 @@ import { ShowCategoriaComponent } from './components/categoria/show-categoria/sh
 import { CreateCategoriaComponent } from './components/categoria/create-categoria/create-categoria.component';
 import { ShowAgenciaComponent } from './components/agencia/show-agencia/show-agencia.component';
 import { CreateAgenciaComponent } from './components/agencia/create-agencia/create-agencia.component';
+import { ShowPersonaComponent } from './components/persona/show-persona/show-persona.component';
+import { CreatePersonaComponent } from './components/persona/create-persona/create-persona.component';
+
 
 const routes: Routes = [
 
@@ -32,12 +35,22 @@ const routes: Routes = [
     {
       path: "agencias",
       component: ShowAgenciaComponent
-    },
+     },
     
-    {
+      {
       path: "crearagencias",
       component: CreateAgenciaComponent
-    },
+      },
+
+    {
+      path: "personas",
+      component: ShowPersonaComponent
+      },
+    
+      {
+      path: "crearpersonas",
+      component: CreatePersonaComponent
+      },
 
 ];
 

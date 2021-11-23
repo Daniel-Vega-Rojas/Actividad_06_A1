@@ -15,7 +15,7 @@ import { AgenciaService } from 'src/app/services/agencia.service';
 })
 export class ShowAgenciaComponent implements OnInit {
 
-  public agencias: AgenciaI [] = []
+  public agencia: AgenciaI [] = []
   public displayedColumns: string [] = ["id","nombre","direccion","telefono","ciudad","status"]
 
   constructor(
@@ -32,7 +32,7 @@ export class ShowAgenciaComponent implements OnInit {
     this.agenciaService.getAgencia()
     .subscribe({
       next:(data)=> {
-      this.agencias = data
+      this.agencia = data
       console.log(data)
 
       }

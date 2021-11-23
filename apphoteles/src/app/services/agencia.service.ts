@@ -12,7 +12,7 @@ import {AgenciaI} from '../models/AgenciaI'
 export class AgenciaService {
 
   api_url = 'http://localhost:4000';
-  base_path = `${this.api_url}/agencia`;
+  base_path = `${this.api_url}/agencias`;
 
 
 
