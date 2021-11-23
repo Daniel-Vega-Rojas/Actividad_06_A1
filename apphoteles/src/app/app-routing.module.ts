@@ -8,8 +8,8 @@ import { ShowAgenciaComponent } from './components/agencia/show-agencia/show-age
 import { CreateAgenciaComponent } from './components/agencia/create-agencia/create-agencia.component';
 import { ShowPersonaComponent } from './components/persona/show-persona/show-persona.component';
 import { CreatePersonaComponent } from './components/persona/create-persona/create-persona.component';
-
-
+import { ShowReservaComponent } from './components/reserva/show-reserva/show-reserva.component';
+import { CreateReservaComponent } from './components/reserva/create-reserva/create-reserva.component';
 import { ShowHotelComponent } from './components/hotel/show-hotel/show-hotel.component';
 import { CreateHotelComponent } from './components/hotel/create-hotel/create-hotel.component';
 
@@ -26,55 +26,54 @@ const routes: Routes = [
   },
 
   {
-    path: "categorias",
-    component: ShowCategoriaComponent
-    },
+  path: "categorias",
+  component: ShowCategoriaComponent
+  },
   
-    {
-    path: "crearcategorias",
-    component: CreateCategoriaComponent
-    },
+  {
+  path: "crearcategorias",
+  component: CreateCategoriaComponent
+  },
 
-    {
-      path: "agencias",
-      component: ShowAgenciaComponent
-     },
+  {
+  path: "agencias",
+  component: ShowAgenciaComponent
+  },
     
-      {
-      path: "crearagencias",
-      component: CreateAgenciaComponent
-      },
+  {
+  path: "crearagencias",
+  component: CreateAgenciaComponent
+  },
 
-    {
-      path: "personas",
-      component: ShowPersonaComponent
-      },
+  {
+  path: "personas",
+  component: ShowPersonaComponent
+  },
     
-      {
-      path: "crearpersonas",
-      component: CreatePersonaComponent
-      },
+  {
+  path: "crearpersonas",
+  component: CreatePersonaComponent
+  },
 
+  {
+  path: "reservas",
+  component: ShowReservaComponent
+  },
+        
+  {
+  path: "crearreservas",
+  component: CreateReservaComponent
+  },   
 
+  {
+  path: "hoteles",
+  component: ShowHotelComponent
+  },
       
-
-      
-
-
-
-
-
-
-
-      {
-        path: "hoteles",
-        component: ShowHotelComponent
-        },
-      
-        {
-        path: "crearhoteles",
-        component: CreateHotelComponent
-        }, 
+  {
+  path: "crearhoteles",
+  component: CreateHotelComponent
+  }, 
 
 ];
 
