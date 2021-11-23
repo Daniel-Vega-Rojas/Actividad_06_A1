@@ -8,6 +8,8 @@ import { ShowAgenciaComponent } from './components/agencia/show-agencia/show-age
 import { CreateAgenciaComponent } from './components/agencia/create-agencia/create-agencia.component';
 import { ShowPersonaComponent } from './components/persona/show-persona/show-persona.component';
 import { CreatePersonaComponent } from './components/persona/create-persona/create-persona.component';
+import { ShowReservaComponent } from './components/reserva/show-reserva/show-reserva.component';
+import { CreateReservaComponent } from './components/reserva/create-reserva/create-reserva.component';
 
 
 const routes: Routes = [
@@ -51,6 +53,16 @@ const routes: Routes = [
   path: "crearpersonas",
   component: CreatePersonaComponent
   },
+
+      {
+        path: "reservas",
+        component: ShowReservaComponent
+        },
+      
+        {
+        path: "crearreservas",
+        component: CreateReservaComponent
+        },
 
 ];
 

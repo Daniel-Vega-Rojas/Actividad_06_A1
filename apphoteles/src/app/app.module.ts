@@ -30,6 +30,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { CategoriaService } from './services/categoria.service';
 import { AgenciaService } from './services/agencia.service';
 import { PersonaService } from './services/persona.service';
+import { ReservaService } from './services/reserva.service';
 
 
 
@@ -69,7 +70,8 @@ import { PersonaService } from './services/persona.service';
     HabitacionService,
     CategoriaService,
     AgenciaService,
-    PersonaService
+    PersonaService,
+    ReservaService
   ],
   bootstrap: [AppComponent]
 })
