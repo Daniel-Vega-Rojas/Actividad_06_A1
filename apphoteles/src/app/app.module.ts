@@ -25,6 +25,8 @@ import { CategoriaService } from './services/categoria.service';
 import { AgenciaService } from './services/agencia.service';
 import { PersonaService } from './services/persona.service';
 
+import { HotelService } from './services/hotel.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import { PersonaService } from './services/persona.service';
     HabitacionService,
     CategoriaService,
     AgenciaService,
-    PersonaService
+    PersonaService,
+
+    HotelService
   ],
   bootstrap: [AppComponent]
 })

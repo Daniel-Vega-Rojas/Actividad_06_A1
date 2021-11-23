@@ -10,6 +10,9 @@ import { ShowPersonaComponent } from './components/persona/show-persona/show-per
 import { CreatePersonaComponent } from './components/persona/create-persona/create-persona.component';
 
 
+import { ShowHotelComponent } from './components/hotel/show-hotel/show-hotel.component';
+import { CreateHotelComponent } from './components/hotel/create-hotel/create-hotel.component';
+
 const routes: Routes = [
 
   {
@@ -51,6 +54,27 @@ const routes: Routes = [
       path: "crearpersonas",
       component: CreatePersonaComponent
       },
+
+
+      
+
+      
+
+
+
+
+
+
+
+      {
+        path: "hoteles",
+        component: ShowHotelComponent
+        },
+      
+        {
+        path: "crearhoteles",
+        component: CreateHotelComponent
+        }, 
 
 ];
 
