@@ -8,3 +8,5 @@ Agregamos algunas tablas con sus Atributos, y hicimos el commit mediante los com
 hoy realizamos lo explicado en la clase por el profesor, y lo agregamos a nuestros proyecto, y a nuestras tablas.
 
 2/11/2021 actualizamos el repositorio agregandole lo visto en clases el dia 26/10/2021 donde utilizamos el thunder y diferentes metodos en el como el create, update, delete etc.
+
+22/11/2021  hoy agregamos los diferentes metodos a nuestro proyecto, y mostramos lo insertado en el fronted de nuestro proyecto con Angular.
