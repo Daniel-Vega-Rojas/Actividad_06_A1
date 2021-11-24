@@ -27,6 +27,10 @@ export class ReservaService {
     return this.http.get<ReservaI[]>(this.base_path)
      
   }
+  createReserva(data: ReservaI): Observable<ReservaI>{
+
+    return this.http.post<ReservaI>(this.base_path, data)
+  }
 }
 
 
