@@ -1,1 +1,40 @@
-<p>create-categoria works!</p>
+<div class= "container">
+
+ <form [formGroup] = "formulario" novalidate (ngSubmit)="onSubmit()">
+    <div>
+
+    <mat-form-field appearance="outline">
+    <mat-label>IVA </mat-label>
+    <input matInput placeholder="Ingrese el iva" formControlName="iva">
+    <mat-icon matSuffix>monetization_on </mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>IVA </mat-label>
+    <input matInput placeholder="Ingrese la descripcion" formControlName="descripcion">
+    <mat-icon matSuffix>comment </mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>status </mat-label>
+    <input matInput placeholder="Estado De La Habitacion" formControlName="status">
+    <mat-icon matSuffix>android</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+    </div>
+
+    <div>
+
+    <button mat-fab disabled type="submit" [disabled]="formulario.invalid">
+          <mat-icon>Send</mat-icon>
+    </button>
+
+
+    </div>
+ </form>
+
+
+</div>

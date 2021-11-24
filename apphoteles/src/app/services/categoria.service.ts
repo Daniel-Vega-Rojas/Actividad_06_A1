@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http'
 
 import { Observable } from 'rxjs';
 
-import { CategoriaI } from '../models/CategoriaI';
+import {CategoriaI} from '../models/CategoriaI'
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ import { CategoriaI } from '../models/CategoriaI';
 export class CategoriaService {
 
   api_url = 'http://localhost:4000';
-  base_path = `${this.api_url}/categorias`
+  base_path = `${this.api_url}/categorias`;
 
 
 
@@ -27,4 +29,11 @@ export class CategoriaService {
     return this.http.get<CategoriaI[]>(this.base_path)
      
   }
+
+  createCategoria(data: CategoriaI): Observable<CategoriaI>{
+
+    return this.http.post<CategoriaI>(this.base_path, data)
+  }
 }
+
+
