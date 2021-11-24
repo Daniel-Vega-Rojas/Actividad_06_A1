@@ -1,1 +1,55 @@
-<p>create-persona works!</p>
+<div class= "container">
+
+    <form [formGroup] = "formulario" novalidate (ngSubmit)="onSubmit()">
+       <div>
+   
+        <mat-form-field appearance="outline">
+       <mat-label>nombre</mat-label>
+       <input matInput placeholder="Ingrese El Nombre" formControlName="nombre">
+       <mat-icon matSuffix>touch_app </mat-icon>
+       <mat-hint>Hint</mat-hint>
+     </mat-form-field>
+
+     <mat-form-field appearance="outline">
+        <mat-label>direccion</mat-label>
+        <input matInput placeholder="Ingrese La Direccion" formControlName="direccion">
+        <mat-icon matSuffix>touch_app </mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>telefono</mat-label>
+        <input matInput placeholder="Ingrese Su Telefono" formControlName="telefono">
+        <mat-icon matSuffix>touch_app </mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>ciudad</mat-label>
+        <input matInput placeholder="Ingrese Su Ciudad" formControlName="ciudad">
+        <mat-icon matSuffix>touch_app </mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+   
+     <mat-form-field appearance="outline">
+       <mat-label>status </mat-label>
+       <input matInput placeholder="Estado De La Persona" formControlName="status">
+       <mat-icon matSuffix>android</mat-icon>
+       <mat-hint>Hint</mat-hint>
+     </mat-form-field>
+   
+       </div>
+   
+       <div>
+   
+       <button mat-fab disabled type="submit" [disabled]="formulario.invalid">
+             <mat-icon>Send</mat-icon>
+       </button>
+   
+   
+       </div>
+    </form>
+   
+   
+   </div>
+   
