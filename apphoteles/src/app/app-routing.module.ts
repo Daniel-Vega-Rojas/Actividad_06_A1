@@ -54,15 +54,15 @@ const routes: Routes = [
   component: CreatePersonaComponent
   },
 
-      {
-        path: "reservas",
-        component: ShowReservaComponent
-        },
+  {
+  path: "reservas",
+  component: ShowReservaComponent
+  },
       
-        {
-        path: "crearreservas",
-        component: CreateReservaComponent
-        },
+  {
+  path: "crearreservas",
+  component: CreateReservaComponent
+  },
 
 ];
 

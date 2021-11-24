@@ -77,7 +77,7 @@ export class AgenciaController {
 
   // }
 
-  public async createHabitaciones(req: Request, res: Response){
+  public async createAgencias(req: Request, res: Response){
 
     let agencia: AgenciaI = req.body;
     try {
