@@ -31,6 +31,7 @@ import { CategoriaService } from './services/categoria.service';
 import { AgenciaService } from './services/agencia.service';
 import { PersonaService } from './services/persona.service';
 import { ReservaService } from './services/reserva.service';
+import { HotelService } from './services/hotel.service';
 
 
 
@@ -71,7 +72,8 @@ import { ReservaService } from './services/reserva.service';
     CategoriaService,
     AgenciaService,
     PersonaService,
-    ReservaService
+    ReservaService,
+    HotelService
   ],
   bootstrap: [AppComponent]
 })
