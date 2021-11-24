@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HabitacionService } from 'src/app/services/habitacion.service';
 import { HabitacionI } from 'src/app/models/HabitacionI';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
