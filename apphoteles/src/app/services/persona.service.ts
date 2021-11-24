@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 
 import {PersonaI} from '../models/PersonaI'
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +28,11 @@ export class PersonaService {
 
     return this.http.get<PersonaI[]>(this.base_path)
      
+  }
+
+  createPersona(data: PersonaI): Observable<PersonaI>{
+
+    return this.http.post<PersonaI>(this.base_path, data)
   }
 }
 

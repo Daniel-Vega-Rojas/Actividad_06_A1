@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 
 import {AgenciaI} from '../models/AgenciaI'
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,4 +29,11 @@ export class AgenciaService {
     return this.http.get<AgenciaI[]>(this.base_path)
      
   }
+
+  createAgencia(data: AgenciaI): Observable<AgenciaI>{
+
+    return this.http.post<AgenciaI>(this.base_path, data)
+  }
 }
+
+
