@@ -40,7 +40,7 @@ export class PersonaController {
         apellido,
         direccion,
         telefono,
-        status
+        // status
 
       } = req.body
       
@@ -50,7 +50,7 @@ export class PersonaController {
             apellido,
             direccion,
             telefono,
-            status
+            // status
 
           }   
         const personaExist: Persona | null = await Persona.findOne (
@@ -86,7 +86,7 @@ export class PersonaController {
       apellido,
       direccion,
       telefono,
-      status
+      // status
 
     } = req.body
 
@@ -96,7 +96,7 @@ export class PersonaController {
         apellido,
         direccion,
         telefono,
-        status
+        // status
 
       }   
 

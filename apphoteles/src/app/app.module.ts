@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/layouts/nav/nav.component';
@@ -18,6 +17,7 @@ import { ShowReservaComponent } from './components/reserva/show-reserva/show-res
 import { CreateReservaComponent } from './components/reserva/create-reserva/create-reserva.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HabitacionService } from './services/habitacion.service';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
@@ -32,6 +32,7 @@ import { AgenciaService } from './services/agencia.service';
 import { PersonaService } from './services/persona.service';
 import { ReservaService } from './services/reserva.service';
 import { HotelService } from './services/hotel.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -61,11 +62,15 @@ import { HotelService } from './services/hotel.service';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
+    MatSelectModule,
     MatSnackBarModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    BrowserAnimationsModule
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+  
+
   ],
   providers: [
     HabitacionService,

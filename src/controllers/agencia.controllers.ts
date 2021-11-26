@@ -98,7 +98,7 @@ export class AgenciaController {
       direccion,
       telefono,
       ciudad,
-      status
+      // status
 
     } = req.body
 
@@ -108,7 +108,7 @@ export class AgenciaController {
         direccion,
         telefono,
         ciudad,
-        status
+        // status
 
       }   
 

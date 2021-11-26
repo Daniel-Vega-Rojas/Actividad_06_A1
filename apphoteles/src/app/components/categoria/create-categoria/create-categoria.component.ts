@@ -25,7 +25,7 @@ export class CreateCategoriaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private categoriaService: CategoriaService,
     private snackBar: MatSnackBar,
-    private roter: Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,18 +36,18 @@ export class CreateCategoriaComponent implements OnInit {
   onSubmit(): void {
 
     const formValue: CategoriaI = this.formulario.value;
-    this.categoriaService.createCategoria(formValue).subscribe(
+    this.categoriaService.create(formValue).subscribe(
       () => {
         this.snackBar.open(
           'Categoria Creada Con Exito ;)', 'OK', {
-            duration: 5000,
+            duration: 5000
           }
         );
-        this.roter.navigateByUrl('/categorias');
+        this.router.navigateByUrl('/categorias');
       },
       err => {
         this.snackBar.open(
-          'Tipo de Ctaegoria no fue creado correctamente *f* ','ERROR', {
+          'Tipo de Cataegoria no fue creado correctamente *f* ','ERROR', {
             duration: 5000,
           }
         )

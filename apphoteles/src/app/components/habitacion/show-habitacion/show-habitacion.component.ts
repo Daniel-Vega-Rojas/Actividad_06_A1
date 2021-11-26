@@ -16,7 +16,7 @@ import { HabitacionService } from 'src/app/services/habitacion.service';
 export class ShowHabitacionComponent implements OnInit {
 
   public habitacion: HabitacionI [] = []
-  public displayedColumns: string [] = ["id","Tipo_De_Habitaciones","status"]
+  public displayedColumns: string [] = ["id","Tipo_De_Habitaciones"]
 
   constructor(
 

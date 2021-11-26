@@ -87,14 +87,14 @@ export class HabitacionController {
     const {
       id,
       Tipo_De_Habitaciones,
-      status
+      // status
 
     } = req.body
 
     try {
       let body: HabitacionI= {
         Tipo_De_Habitaciones,
-        status
+        // status
 
       }   
 

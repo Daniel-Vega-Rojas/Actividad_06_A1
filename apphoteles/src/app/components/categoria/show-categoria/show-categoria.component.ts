@@ -16,7 +16,7 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 export class ShowCategoriaComponent implements OnInit {
 
   public categoria: CategoriaI [] = []
-  public displayedColumns: string [] = ["id","iva","descripcion","status"]
+  public displayedColumns: string [] = ["id","iva","descripcion"]
 
   constructor(
 

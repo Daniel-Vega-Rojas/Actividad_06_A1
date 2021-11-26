@@ -12,14 +12,14 @@ export class Reserva extends Model {
     public Fecha_Ingreso!: Date;
     public Hora_Ingreso!: string;
     public Fecha_Salida!: Date;
-    public status! : boolean;
+  
 }
 
 export interface ReservaI {
     Fecha_Ingreso: Date;
     Hora_Ingreso: string;
     Fecha_Salida: Date;
-    status : boolean;
+    
 }
 
 Reserva.init (
@@ -40,12 +40,7 @@ Reserva.init (
             type: DataTypes.DATE, 
             allowNull: false
         },
-        status:  {
-            type: DataTypes.ENUM,
-            values:['Activado', 'Desactivado'], 
-            defaultValue: 'Activado',
-            allowNull: false
-        },
+       
 
 
     },

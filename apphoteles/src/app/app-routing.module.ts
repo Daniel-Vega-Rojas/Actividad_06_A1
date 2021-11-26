@@ -1,4 +1,4 @@
-import {  Component, NgModule } from '@angular/core';
+import {   NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateHabitacionComponent } from './components/habitacion/create-habitacion/create-habitacion.component';
 import { ShowHabitacionComponent } from './components/habitacion/show-habitacion/show-habitacion.component';

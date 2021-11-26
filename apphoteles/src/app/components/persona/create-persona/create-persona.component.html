@@ -11,29 +11,29 @@
      </mat-form-field>
 
      <mat-form-field appearance="outline">
+        <mat-label>apellido</mat-label>
+        <input matInput placeholder="Ingrese el apellido" formControlName="apellido">
+        <mat-icon matSuffix>touch_app </mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
         <mat-label>direccion</mat-label>
-        <input matInput placeholder="Ingrese La Direccion" formControlName="direccion">
+        <input matInput placeholder="Ingrese Su Direccion" formControlName="direccion">
         <mat-icon matSuffix>touch_app </mat-icon>
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>telefono</mat-label>
-        <input matInput placeholder="Ingrese Su Telefono" formControlName="telefono">
-        <mat-icon matSuffix>touch_app </mat-icon>
-        <mat-hint>Hint</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>ciudad</mat-label>
-        <input matInput placeholder="Ingrese Su Ciudad" formControlName="ciudad">
+        <input matInput placeholder="Ingrese Telefono" formControlName="telefono">
         <mat-icon matSuffix>touch_app </mat-icon>
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
    
      <mat-form-field appearance="outline">
        <mat-label>status </mat-label>
-       <input matInput placeholder="Estado De La Persona" formControlName="status">
+       <input matInput placeholder="Estado De La status" formControlName="status">
        <mat-icon matSuffix>android</mat-icon>
        <mat-hint>Hint</mat-hint>
      </mat-form-field>
@@ -43,7 +43,7 @@
        <div>
    
        <button mat-fab disabled type="submit" [disabled]="formulario.invalid">
-             <mat-icon>Send</mat-icon>
+             <mat-icon>OK</mat-icon>
        </button>
    
    

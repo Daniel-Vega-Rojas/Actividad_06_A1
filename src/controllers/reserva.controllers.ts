@@ -28,46 +28,58 @@ export class ReservaController {
 
 public async createReservas(req: Request, res: Response){
 
-    // const body: UserI = req.body;
-
-    const {
-      id,
-      Fecha_Ingreso,
-      Hora_Ingreso,
-      Fecha_Salida,
-      status
-
-    } = req.body
-
+  let reserva: ReservaI = req.body;
   try {
-      let body: ReservaI= {
-      Fecha_Ingreso,
-      Hora_Ingreso,
-      Fecha_Salida,
-      status
-    }   
-  const reservaExist: Reserva | null = await Reserva.findOne (
-    {
-          where: {Fecha_Salida: body.Fecha_Salida},
-    }
 
-
-);  
-
-if (reservaExist){
-  return res.status(400).json({msg: 'El horario ya ha sido registrado, Vuelva a intentarlo'})
+    const dataReserva: ReservaI = await Reserva.create(reserva);
+    res.json(dataReserva)
+  } catch (error) {
+      res.status(500).json(error)
+  }
 }
 
-const reserva = await Reserva.create(body);
-res.status(200).json({reserva})
+// public async createReservas(req: Request, res: Response){
 
-}catch (error) {
+//     // const body: UserI = req.body;
 
-     res.status(500).json({msg: 'Error Internal'})
+//     const {
+//       id,
+//       Fecha_Ingreso,
+//       Hora_Ingreso,
+//       Fecha_Salida,
+//       // status
 
-}
+//     } = req.body
 
-}
+//   try {
+//       let body: ReservaI= {
+//       Fecha_Ingreso,
+//       Hora_Ingreso,
+//       Fecha_Salida,
+//       // status
+//     }   
+//   const reservaExist: Reserva | null = await Reserva.findOne (
+//     {
+//           where: {Fecha_Salida: body.Fecha_Salida},
+//     }
+
+
+// );  
+
+// if (reservaExist){
+//   return res.status(400).json({msg: 'El horario ya ha sido registrado, Vuelva a intentarlo'})
+// }
+
+// const reserva = await Reserva.create(body);
+// res.status(200).json({reserva})
+
+// }catch (error) {
+
+//      res.status(500).json({msg: 'Error Internal'})
+
+// }
+
+// }
 
 public async updateReservas(req: Request, res: Response) {
 
@@ -77,7 +89,7 @@ public async updateReservas(req: Request, res: Response) {
       Fecha_Ingreso,
       Hora_Ingreso,
       Fecha_Salida,
-      status
+      // status
 
     } = req.body
 
@@ -86,7 +98,7 @@ public async updateReservas(req: Request, res: Response) {
       Fecha_Ingreso,
       Hora_Ingreso,
       Fecha_Salida,
-      status
+      // status
 
     }   
 

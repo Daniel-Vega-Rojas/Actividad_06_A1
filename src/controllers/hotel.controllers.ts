@@ -28,48 +28,60 @@ export class HotelController {
   //     }
   // }
 
-  public async createHoteles(req: Request, res: Response){
+  // public async createHoteles(req: Request, res: Response){
 
-    // const body: UserI = req.body;
+  //   // const body: UserI = req.body;
 
-    const {
-      id,
-      Nombre_De_Hotel,
-      Direccion,
-      Año_De_Construccion,
-      status
+  //   const {
+  //     id,
+  //     Nombre_De_Hotel,
+  //     Direccion,
+  //     fecha_De_Construccion,
+  //     // status
 
-    } = req.body
+  //   } = req.body
     
-    try {
-      let body: HotelI= {
-          Nombre_De_Hotel,
-          Direccion,
-          Año_De_Construccion,
-          status
-        }   
-      const hotelExist: Hotel | null = await Hotel.findOne (
-        {
-              where: {Nombre_De_Hotel: body.Nombre_De_Hotel},
-        }
+  //   try {
+  //     let body: HotelI= {
+  //         Nombre_De_Hotel,
+  //         Direccion,
+  //         fecha_De_Construccion,
+  //         // status
+  //       }   
+  //     const hotelExist: Hotel | null = await Hotel.findOne (
+  //       {
+  //             where: {Nombre_De_Hotel: body.Nombre_De_Hotel},
+  //       }
 
 
-    );  
+  //   );  
 
-    if (hotelExist){
-      return res.status(400).json({msg: 'El Hotel ya ha sido registrado, Vuelva a intentarlo'})
-    }
+  //   if (hotelExist){
+  //     return res.status(400).json({msg: 'El Hotel ya ha sido registrado, Vuelva a intentarlo'})
+  //   }
 
-    const hotel = await Hotel.create(body);
-    res.status(200).json({hotel})
+  //   const hotel = await Hotel.create(body);
+  //   res.status(200).json({hotel})
 
-  }catch (error) {
+  // }catch (error) {
 
-      res.status(500).json({msg: 'Error Internal'})
+  //     res.status(500).json({msg: 'Error Internal'})
 
-  }
+  // }
   
 
+// }
+
+public async createHoteles(req: Request, res: Response){
+
+  let hotel: HotelI = req.body;
+  try {
+
+    const dataHotel: HotelI = await Hotel.create(hotel);
+    res.json(dataHotel)
+  } catch (error) {
+      res.status(500).json(error)
+  }
 }
 
 public async updateHoteles(req: Request, res: Response) {
@@ -79,7 +91,7 @@ public async updateHoteles(req: Request, res: Response) {
     id,
     Nombre_De_Hotel,
     Direccion,
-    Año_De_Construccion,
+    fecha_De_Construccion,
     status
 
   } = req.body
@@ -88,8 +100,8 @@ public async updateHoteles(req: Request, res: Response) {
     let body: HotelI= {
         Nombre_De_Hotel,
         Direccion,
-        Año_De_Construccion,
-        status
+        fecha_De_Construccion,
+        // status
 
     }   
 

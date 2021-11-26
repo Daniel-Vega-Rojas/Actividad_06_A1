@@ -16,7 +16,7 @@ import { ReservaService } from 'src/app/services/reserva.service';
 export class ShowReservaComponent implements OnInit {
 
   public reserva: ReservaI [] = []
-  public displayedColumns: string [] = ["id","Fecha_Ingreso","Hora_Ingreso","Fecha_Salida","status"]
+  public displayedColumns: string [] = ["id","Fecha_Ingreso","Hora_Ingreso","Fecha_Salida"]
 
   constructor(
 

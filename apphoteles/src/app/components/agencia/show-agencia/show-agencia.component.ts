@@ -16,7 +16,7 @@ import { AgenciaService } from 'src/app/services/agencia.service';
 export class ShowAgenciaComponent implements OnInit {
 
   public agencia: AgenciaI [] = []
-  public displayedColumns: string [] = ["id","nombre","direccion","telefono","ciudad","status"]
+  public displayedColumns: string [] = ["id","nombre","direccion","telefono","ciudad"]
 
   constructor(
 

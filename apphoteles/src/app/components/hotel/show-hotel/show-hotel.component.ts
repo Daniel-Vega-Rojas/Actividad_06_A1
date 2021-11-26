@@ -16,7 +16,7 @@ import { HotelService } from 'src/app/services/hotel.service';
 export class ShowHotelComponent implements OnInit {
 
   public hotel: HotelI [] = []
-  public displayedColumns: string [] = ["id","Nombre_De_Hotel","Direccion","Ano_De_Construccion","status"]
+  public displayedColumns: string [] = ["id","Nombre_De_Hotel","Direccion","fecha_De_Construccion"]
 
   constructor(
 

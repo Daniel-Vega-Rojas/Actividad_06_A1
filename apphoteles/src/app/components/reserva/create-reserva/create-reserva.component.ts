@@ -44,7 +44,7 @@ export class CreateReservaComponent implements OnInit {
             duration: 5000,
           }
         );
-        this.roter.navigateByUrl('/reserva');
+        this.roter.navigateByUrl('/reservas');
       },
       err => {
         this.snackBar.open(

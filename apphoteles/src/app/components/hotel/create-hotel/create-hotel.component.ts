@@ -17,7 +17,7 @@ export class CreateHotelComponent implements OnInit {
 
     Nombre_De_Hotel:      ['', Validators.required],
     Direccion:            ['', Validators.required],
-    Año_De_Construccion:  ['', Validators.required],
+    fecha_De_Construccion:  ['', Validators.required],
     status:               ['', Validators.required]
   })
 

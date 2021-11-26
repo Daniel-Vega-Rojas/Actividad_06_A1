@@ -25,53 +25,20 @@ export class CategoriaController {
 
   //         res.status(500).json({msg: 'Error Internal'})
 
-  //     }
-  // }
+  public async createCategorias(req: Request, res: Response){
 
-    
-    public async createCategorias(req: Request, res: Response){
+    let categoria: CategoriaI = req.body;
+    try {
 
-        // const body: CategoriaI = req.body;
-
-        const {
-          id,
-          iva,
-          descripcion,
-          status
-
-        } = req.body
-        
-        try {
-          let body: CategoriaI= {
-              iva, 
-              descripcion,
-              status
-
-            }   
-          const categoriaExist: Categoria | null = await Categoria.findOne (
-            {
-                  where: {descripcion: body.descripcion},
-            }
-
-
-        );  
-
-        if (categoriaExist){
-          return res.status(400).json({msg: 'la categoria ya ha sido registrado'})
-        }
-
-        const categoria = await Categoria.create(body);
-        res.status(200).json({categoria})
-
-      }catch (error) {
-
-          res.status(500).json({msg: 'Error Internal'})
-
-      }
-
-      
-
+      const dataCategoria: CategoriaI = await Categoria.create(categoria);
+      res.json(dataCategoria)
+    } catch (error) {
+        res.status(500).json(error)
     }
+  }
+
+           
+        
 
     public async updateCategoria(req: Request, res: Response) {
 
@@ -80,7 +47,7 @@ export class CategoriaController {
         id,
         iva,
         descripcion,
-        status
+        // status
 
       } = req.body
 
@@ -88,7 +55,7 @@ export class CategoriaController {
         let body: CategoriaI= {
           iva,
           descripcion,
-          status
+          // status
 
         }   
 

@@ -6,13 +6,13 @@ export class Categoria extends Model {
 
     public iva!: string;
     public descripcion!: string; 
-    public status! : boolean;   
+     
 }
 
 export interface CategoriaI {
      iva: string;
      descripcion: string; 
-     status : boolean;
+    
 }
 
 Categoria.init (
@@ -28,12 +28,7 @@ Categoria.init (
             allowNull: false
 
         },
-        status:  {
-            type: DataTypes.ENUM,
-            values:['Activado', 'Desactivado'], 
-            defaultValue: 'Activado',
-            allowNull: false
-        },
+       
 
 
     },
